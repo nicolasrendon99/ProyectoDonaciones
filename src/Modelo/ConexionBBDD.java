@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -72,13 +71,7 @@ public class ConexionBBDD {
 
 		}
 
-
-	
-
-	
-	
 	//*************************METODOS APLICACION*****************************************
-	
 	
 	//metodo bbddObtenerDonantes
 	public ObservableList<Donante> bbddObtenerDonantes() throws SQLException{
@@ -106,20 +99,19 @@ public class ConexionBBDD {
 				String DNI=resultado.getString(5);
 				String aptitud=resultado.getString(6);
 				String fecha_nacimiento=resultado.getString(7);
-				String pais_nacimiento=resultado.getString(8);
-				String direccion=resultado.getString(9);
-				String provincia=resultado.getString(10);
-				String poblacion=resultado.getString(11);
-				String residencia=resultado.getString(12);
+				int telefono=resultado.getInt(8);
+				int movil=resultado.getInt(9);
+				String tipo_sanguineo =resultado.getString(10);
+				String pais_nacimiento=resultado.getString(11);
+				String email=resultado.getString(12);
 				int cp=resultado.getInt(13);
-				int telefono=resultado.getInt(14);
-				int movil=resultado.getInt(15);
-				String email=resultado.getString(16);
+				String provincia=resultado.getString(14);
+				String poblacion=resultado.getString(15);
+				String direccion=resultado.getString(16);
 				char sexo = resultado.getString(17).charAt(0);
-				String tipo_sanguineo =resultado.getString(18);
-				Blob FOTO=resultado.getBlob(19);
+				String ciclo =resultado.getString(18);
 								
-				Donante nuevo = new Donante(num_donante, nombre, apellido1, apellido2, DNI, aptitud, fecha_nacimiento, pais_nacimiento, provincia, poblacion, residencia, cp, telefono, movil ,email, sexo, direccion,  tipo_sanguineo, FOTO);
+				Donante nuevo = new Donante(num_donante, nombre, apellido1, apellido2, DNI, aptitud, fecha_nacimiento, telefono, movil, tipo_sanguineo,  pais_nacimiento,  email, cp, provincia, poblacion, direccion,   sexo,   ciclo);
 				listadonantes.add(nuevo);
 			}
 

@@ -1,6 +1,5 @@
 package Modelo;
 
-import java.sql.Blob;
 
 public class Donante {
 	private int num_donante;
@@ -10,7 +9,6 @@ public class Donante {
 	private String DNI;
 	private String aptitud;
 	private String fecha_nacimiento;
-	private String foto;
 	private int telefono;
 	private int movil;
 	private String tipo_sanguineo;
@@ -19,15 +17,14 @@ public class Donante {
 	private int cp;
 	private String provincia;
 	private String poblacion;
-	private String residencia;
 	private String direccion;
 	private char sexo;
-	private Blob FOTO;
+	private String ciclo;
 	
 	
 	public Donante(int num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
-			String fecha_nacimiento, String pais_nacimiento, String provincia, String poblacion, String residencia, int cp, int telefono, int movil, String email,
-			   char sexo, String direccion, String tipo_sanguineo, Blob FOTO) {
+			String fecha_nacimiento,int telefono, int movil,String tipo_sanguineo, String pais_nacimiento, String email, int cp, String provincia, String poblacion, String direccion,
+			   char sexo, String ciclo) {
 		super();
 		this.num_donante = num_donante;
 		this.nombre = nombre;
@@ -36,7 +33,6 @@ public class Donante {
 		this.DNI = DNI;
 		this.aptitud = aptitud;
 		this.fecha_nacimiento = fecha_nacimiento;
-		this.setFOTO(FOTO);
 		this.telefono = telefono;
 		this.movil = movil;
 		this.tipo_sanguineo = tipo_sanguineo;
@@ -45,9 +41,10 @@ public class Donante {
 		this.cp = cp;
 		this.provincia=provincia;
 		this.poblacion = poblacion;
-		this.residencia = residencia;
+	
 		this.direccion = direccion;
 		this.sexo = sexo;
+		this.ciclo=ciclo;
 	}
 	
 
@@ -124,14 +121,6 @@ public class Donante {
 	}
 
 
-	public String getFoto() {
-		return foto;
-	}
-
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
 
 
 	public int getTelefono() {
@@ -214,14 +203,6 @@ public class Donante {
 	}
 
 
-	public String getResidencia() {
-		return residencia;
-	}
-
-
-	public void setResidencia(String residencia) {
-		this.residencia = residencia;
-	}
 
 
 	public String getDireccion() {
@@ -245,14 +226,22 @@ public class Donante {
 
 
 
-	public Blob getFOTO() {
-		return FOTO;
+
+
+
+
+
+
+	public String getCiclo() {
+		return ciclo;
 	}
 
 
 
-	public void setFOTO(Blob fOTO) {
-		FOTO = fOTO;
+
+
+	public void setCiclo(String ciclo) {
+		this.ciclo = ciclo;
 	}
 
 
