@@ -52,14 +52,14 @@ public class Main  extends Application{
 
 	    public void mostrarVentanaDonante() {
 	        try {
-	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/UIDonantes.fxml"));
-	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/UIDonantes.fxml"));
+	            AnchorPane ventana2 = (AnchorPane) loader.load();
 	   
 	            Stage ventana = new Stage();
 	            ventana.setTitle("Ventana Donantes");
 	           
 	            ventana.initOwner(stagePrincipal);
-	            Scene scene = new Scene(ventanaDos);
+	            Scene scene = new Scene(ventana2);
 	            ventana.setScene(scene);
 
 	            ControladoraDonantes controller2 = loader.getController();
@@ -69,6 +69,7 @@ public class Main  extends Application{
 	            ventana.show();
 
 	        } catch (Exception e) {
+	        	System.out.println(e);
 	            
 	        }
 	    }
@@ -76,7 +77,7 @@ public class Main  extends Application{
 	
 	    public void VentanaDonaciones() {
 	        try {
-	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/UIDonaciones.fxml"));
+	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/UIDonaciones.fxml"));
 	            AnchorPane ventana3 = (AnchorPane) loader.load();
 	          
 	            Stage ventana = new Stage();
@@ -86,13 +87,14 @@ public class Main  extends Application{
 	            Scene scene = new Scene(ventana3);
 	            ventana.setScene(scene);
 
-	            ControladoraDonaciones controller2 = loader.getController();
-	            controller2.setStagePrincipal(ventana);
-	            controller2.setProgramaPrincipal(this);
+	            ControladoraDonaciones controller3 = loader.getController();
+	            controller3.setStagePrincipal(ventana);
+	            controller3.setProgramaPrincipal(this);
 
 	            ventana.show();
 
 	        } catch (Exception e) {
+	        	System.out.println(e);
 	       
 	        }
 	    }
@@ -100,7 +102,7 @@ public class Main  extends Application{
 	  
 	    public void mostrarVentanainformes() {
 	        try {
-	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/UIinformes.fxml"));
+	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/UIinformes.fxml"));
 	            AnchorPane ventana4 = (AnchorPane) loader.load();
 	            
 	            Stage ventana = new Stage();
@@ -110,16 +112,17 @@ public class Main  extends Application{
 	            Scene scene = new Scene(ventana4);
 	            ventana.setScene(scene);
 
-	            ControladoraInformes controller2 = loader.getController();
-	            controller2.setStagePrincipal(ventana);
+	            ControladoraInformes controller4 = loader.getController();
+	            controller4.setStagePrincipal(ventana);
 	            ventana.show();
 
 	        } catch (Exception e) {
+	        	System.out.println(e);
 	        }
 	        }
 	        public void mostrarVentanaFormulario() {
 		        try {
-		            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/UIFormulario.fxml"));
+		            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/UIFormulario.fxml"));
 		            AnchorPane ventanaDos = (AnchorPane) loader.load();
 		            
 		            Stage ventana = new Stage();
@@ -129,12 +132,13 @@ public class Main  extends Application{
 		            Scene scene = new Scene(ventanaDos);
 		            ventana.setScene(scene);
 
-		            ControladoraFormulario controller2 = loader.getController();
-		            controller2.setStagePrincipal(ventana);
+		            ControladoraFormulario controller5 = loader.getController();
+		            controller5.setStagePrincipal(ventana);
 
 		            ventana.show();
 
 		        } catch (Exception e) {
+		        	System.out.println(e);
 	    }
 	        
 		           

@@ -578,7 +578,7 @@
                                     <Font size="10.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="455.0" layoutY="552.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="73.0" text="CONTINUAR">
+                              <Button fx:id="continuar" layoutX="455.0" layoutY="552.0" mnemonicParsing="false" onAction="#AbrirVentanaDonaciones" prefHeight="33.0" prefWidth="73.0" text="CONTINUAR">
                                  <font>
                                     <Font size="10.0" />
                                  </font>

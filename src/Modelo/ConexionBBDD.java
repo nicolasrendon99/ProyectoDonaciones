@@ -27,7 +27,7 @@ public class ConexionBBDD {
 		InputStream entrada = null;
 		
 		try {
-			File miFichero = new File("src/Modelo/datos.ini");
+			File miFichero = new File("src/Modelo/Datos.ini");
 			if (miFichero.exists()){
 				entrada = new FileInputStream(miFichero);
 				propiedades.load(entrada);
@@ -119,8 +119,8 @@ public class ConexionBBDD {
 				String tipo_sanguineo =resultado.getString(18);
 				Blob FOTO=resultado.getBlob(19);
 								
-				Donante nueva = new Donante(num_donante, nombre, apellido1, apellido2, DNI, aptitud, fecha_nacimiento, pais_nacimiento, provincia, poblacion, residencia, cp, telefono, movil ,email, sexo, direccion,  tipo_sanguineo, FOTO);
-				listadonantes.add(nueva);
+				Donante nuevo = new Donante(num_donante, nombre, apellido1, apellido2, DNI, aptitud, fecha_nacimiento, pais_nacimiento, provincia, poblacion, residencia, cp, telefono, movil ,email, sexo, direccion,  tipo_sanguineo, FOTO);
+				listadonantes.add(nuevo);
 			}
 
 			if(contador==0)

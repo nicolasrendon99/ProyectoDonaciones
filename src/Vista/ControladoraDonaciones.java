@@ -27,30 +27,7 @@ public class ControladoraDonaciones {
 		
 
 		private Stage ventana;
-
-		public void setStagePrincipal(Stage ventana) {
-			// TODO Auto-generated method stub
-			this.ventana = ventana;
-		}
-		public void closeWindow(){
-			this.ventana.close();
-		}
-
-		public void setProgramaPrincipal(Main ProgramaPrincipal) {
-	        this.setPaginaPrincipal(ProgramaPrincipal);
-	    }
-		
-		// Al presionar el botón de volver cierro VentanaTres y abro VentanDos
-		public void Volver(){
-			this.ventana.close();
-			this.PaginaPrincipal.mostrarVentanaFormulario();
-
-		}
-
-
-
-		 
-		//***********elementos************
+//***********elementos************
 		 @FXML
 			private TextField COD_DONACION;
 		 @FXML
@@ -125,8 +102,28 @@ public class ControladoraDonaciones {
 				// Al arrancar la vista se pone edicion a false
 				setEdicion(false);
 				setIndiceedicion(0);
+				
 	
 			}
+			public void setStagePrincipal(Stage ventana) {
+				// TODO Auto-generated method stub
+				this.ventana = ventana;
+			}
+			public void closeWindow(){
+				this.ventana.close();
+			}
+
+			public void setProgramaPrincipal(Main ProgramaPrincipal) {
+		        this.setPaginaPrincipal(ProgramaPrincipal);
+		    }
+			
+			// Al presionar el botón de volver cierro VentanaTres y abro VentanDos
+			public void Volver(){
+				this.ventana.close();
+				this.PaginaPrincipal.mostrarVentanaFormulario();
+
+			}
+
 
 			public boolean isEdicion() {
 				return edicion;

@@ -8,11 +8,16 @@ import javafx.stage.Stage;
 
 public class ControladoraFormulario {
 
-	private  Controlador.Main PaginaPrincipal;
+	private Main PaginaPrincipal;
 
 	@FXML
 	private Button buttonclose;
-private Button continuar;
+	
+	@FXML
+	private Button continuar;
+	
+	@FXML 
+	private Button eliminar;
 
 
 	private Stage ventana;
@@ -30,7 +35,7 @@ private Button continuar;
 		this.ventana.close();
 	}
 
-	public void AbrirVentana3(){
+	public void AbrirVentanaDonaciones(){
 		this.PaginaPrincipal.VentanaDonaciones();
 		this.ventana.close();
 	}
