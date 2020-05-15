@@ -2,19 +2,19 @@ package Modelo;
 
 
 public class Donante {
-	private int num_donante;
+	private String num_donante;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String DNI;
 	private String aptitud;
 	private String fecha_nacimiento;
-	private int telefono;
-	private int movil;
+	private String telefono;
+	private String movil;
 	private String tipo_sanguineo;
 	private String pais_nacimiento;
 	private String email;
-	private int cp;
+	private String cp;
 	private String provincia;
 	private String poblacion;
 	private String direccion;
@@ -22,8 +22,8 @@ public class Donante {
 	private String ciclo;
 	
 	
-	public Donante(int num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
-			String fecha_nacimiento,int telefono, int movil,String tipo_sanguineo, String pais_nacimiento, String email, int cp, String provincia, String poblacion, String direccion,
+	public Donante(String num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
+			String fecha_nacimiento,String telefono, String movil,String tipo_sanguineo, String pais_nacimiento, String email, String cp, String provincia, String poblacion, String direccion,
 			   char sexo, String ciclo) {
 		super();
 		this.num_donante = num_donante;
@@ -51,12 +51,12 @@ public class Donante {
 
 
 
-	public int getNum_donante() {
+	public String getNum_donante() {
 		return num_donante;
 	}
 
 
-	public void setNum_donante(int num_donante) {
+	public void setNum_donante(String num_donante) {
 		this.num_donante = num_donante;
 	}
 
@@ -123,22 +123,22 @@ public class Donante {
 
 
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
 
-	public int getMovil() {
+	public String getMovil() {
 		return movil;
 	}
 
 
-	public void setMovil(int movil) {
+	public void setMovil(String movil) {
 		this.movil = movil;
 	}
 
@@ -173,12 +173,12 @@ public class Donante {
 	}
 
 
-	public int getCp() {
+	public String getCp() {
 		return cp;
 	}
 
 
-	public void setCp(int cp) {
+	public void setCp(String cp) {
 		this.cp = cp;
 	}
 
@@ -215,12 +215,12 @@ public class Donante {
 	}
 
 
-	public char getSexo() {
+	public Character getSexo() {
 		return sexo;
 	}
 
 
-	public void setSexo(char sexo) {
+	public void setSexo(Character sexo) {
 		this.sexo = sexo;
 	}
 

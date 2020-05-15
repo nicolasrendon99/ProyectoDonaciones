@@ -52,7 +52,7 @@ public class Main  extends Application{
 
 	    public void mostrarVentanaDonante() {
 	        try {
-	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/UIDonantes.fxml"));
+	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/PantallaDonantes.fxml"));
 	            AnchorPane ventana2 = (AnchorPane) loader.load();
 	   
 	            Stage ventana = new Stage();
