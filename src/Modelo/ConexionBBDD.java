@@ -17,7 +17,7 @@ import javafx.scene.control.ToggleGroup;
 
 public class ConexionBBDD {
 
-	private String url= "jdbc:oracle:thin:@localhost:1521:XE";
+	private String url;
 	private String user = "";
 	private String pwd = "";
 	private String usr= "";
