@@ -66,6 +66,8 @@ public class ControladoraDonantes {
 	private TextField PAIS_NACIMIENTO;
 	@FXML
 	private ComboBox<String> GRUPO_SANGUINEO;
+	
+	ObservableList<String>ListacomboGrupoSanguineo=FXCollections.observableArrayList("A+", "A-", "B+", "B-", "AB+", "AB-","0+", "0-");
 	@FXML
 	private TextField PROVINCIA;
 	@FXML
@@ -95,7 +97,7 @@ public class ControladoraDonantes {
 	private TableView<Donante> tabla;
 	
 	@FXML
-	private TableColumn<Donante,String> col_NUM_DONANTE;
+	private TableColumn<Donante,Integer> col_NUM_DONANTE;
 	@FXML
 	private TableColumn<Donante,String> col_NOMBRE;
 	@FXML
@@ -109,9 +111,9 @@ public class ControladoraDonantes {
 	@FXML
 	private TableColumn<Donante,String> col_FECHA_NACIMIENTO;
 	@FXML
-	private TableColumn<Donante,String> col_TELEFONO;
+	private TableColumn<Donante,Integer> col_TELEFONO;
 	@FXML
-	private TableColumn<Donante,String> col_MOVIL;
+	private TableColumn<Donante,Integer> col_MOVIL;
 	@FXML
 	private TableColumn<Donante,String> col_TIPO_SANGUINEO;
 	@FXML
@@ -119,7 +121,7 @@ public class ControladoraDonantes {
 	@FXML
 	private TableColumn<Donante,String> col_EMAIL;
 	@FXML
-	private TableColumn<Donante,String> col_CP;
+	private TableColumn<Donante,Integer> col_CP;
 	@FXML
 	private TableColumn<Donante,String> col_PROVINCIA;
 	@FXML
@@ -134,10 +136,10 @@ public class ControladoraDonantes {
 	
 	//comboboxañadir
 	
-	ObservableList<String>ListacomboGrupoSanguineo=FXCollections.observableArrayList();
+	
 	
 	//datos tabla
-	ObservableList<Donante> datos ;
+	ObservableList<Donante> datos = FXCollections.observableArrayList() ;
 
 	// Atributos necesarios para codificar la edicion
 	private boolean edicion;
@@ -145,47 +147,37 @@ public class ControladoraDonantes {
 	
 	//inial al cargar
 	public void initialize() throws SQLException{
-		//listaComboGrupoSanguineo
 		
-				ListacomboGrupoSanguineo.add("A+");
-				ListacomboGrupoSanguineo.add("A-");
-				ListacomboGrupoSanguineo.add("B+");
-				ListacomboGrupoSanguineo.add("B-");
-				ListacomboGrupoSanguineo.add("AB+");
-				ListacomboGrupoSanguineo.add("AB-");
-				ListacomboGrupoSanguineo.add("0+");
-				ListacomboGrupoSanguineo.add("0-");
-				GRUPO_SANGUINEO.setItems(ListacomboGrupoSanguineo);
-				// Llamar a un método de la clase de manipulación de BBDD para que me devuelva un ObservableList<Persona> datos
-				
-				datos= FXCollections.observableArrayList();
+			GRUPO_SANGUINEO.setItems(ListacomboGrupoSanguineo);
+			
 				
 				ConexionBBDD con = new ConexionBBDD();
 				datos = con.MostrarTabla();
 
-				tabla.setItems(this.datos);
+				tabla.setItems(datos);
 
-				col_NUM_DONANTE.setCellValueFactory(new PropertyValueFactory<Donante,String>("num_donante"));
-				col_NOMBRE.setCellValueFactory(new PropertyValueFactory<Donante,String>("nombre"));
-				col_APELLIDO1.setCellValueFactory(new PropertyValueFactory<Donante,String>("apellido1"));
-				col_APELLIDO2.setCellValueFactory(new PropertyValueFactory<Donante,String>("apellido2"));
+				col_NUM_DONANTE.setCellValueFactory(new PropertyValueFactory<Donante,Integer>("NUM_DONANTES"));
+				col_NOMBRE.setCellValueFactory(new PropertyValueFactory<Donante,String>("NOMBRE"));
+				col_APELLIDO1.setCellValueFactory(new PropertyValueFactory<Donante,String>("APELLIDO1"));
+				col_APELLIDO2.setCellValueFactory(new PropertyValueFactory<Donante,String>("APELLIDO2"));
 				col_DNI.setCellValueFactory(new PropertyValueFactory<Donante,String>("DNI"));
-				col_APTITUD.setCellValueFactory(new PropertyValueFactory<Donante,String>("aptitud"));
-				col_FECHA_NACIMIENTO.setCellValueFactory(new PropertyValueFactory<Donante,String>("fecha_nacimiento"));
-				col_TELEFONO.setCellValueFactory(new PropertyValueFactory<Donante,String>("telefono"));
-				col_MOVIL.setCellValueFactory(new PropertyValueFactory<Donante,String>("movil"));
-				col_TIPO_SANGUINEO.setCellValueFactory(new PropertyValueFactory<Donante,String>("tipo_sanguineo"));
-				col_PAIS_NACIMIENTO.setCellValueFactory(new PropertyValueFactory<Donante,String>("pais_nacimiento"));
-				col_EMAIL.setCellValueFactory(new PropertyValueFactory<Donante,String>("email"));
-				col_CP.setCellValueFactory(new PropertyValueFactory<Donante,String>("cp"));
-				col_PROVINCIA.setCellValueFactory(new PropertyValueFactory<Donante,String>("provincia"));
-				col_POBLACION.setCellValueFactory(new PropertyValueFactory<Donante,String>("poblacion"));
-				col_DIRECCION.setCellValueFactory(new PropertyValueFactory<Donante,String>("direccion"));
-				col_SEXO.setCellValueFactory(new PropertyValueFactory<Donante, Character>("sexo"));
-				col_CICLO.setCellValueFactory(new PropertyValueFactory<Donante,String>("ciclo"));
+				col_APTITUD.setCellValueFactory(new PropertyValueFactory<Donante,String>("APTITUD"));
+				col_FECHA_NACIMIENTO.setCellValueFactory(new PropertyValueFactory<Donante,String>("FECHA_ NACIMIENTO"));
+				col_TELEFONO.setCellValueFactory(new PropertyValueFactory<Donante,Integer>("TELEFONO"));
+				col_MOVIL.setCellValueFactory(new PropertyValueFactory<Donante,Integer>("TELEFONO_MOVIL"));
+				col_TIPO_SANGUINEO.setCellValueFactory(new PropertyValueFactory<Donante,String>("TIPO_SANGUINEO"));
+				col_PAIS_NACIMIENTO.setCellValueFactory(new PropertyValueFactory<Donante,String>("PAIS_NACIMIENTO"));
+				col_EMAIL.setCellValueFactory(new PropertyValueFactory<Donante,String>("EMAIL"));
+				col_CP.setCellValueFactory(new PropertyValueFactory<Donante,Integer>("CP"));
+				col_PROVINCIA.setCellValueFactory(new PropertyValueFactory<Donante,String>("PROVINCIA"));
+				col_POBLACION.setCellValueFactory(new PropertyValueFactory<Donante,String>("POBLACION"));
+				col_DIRECCION.setCellValueFactory(new PropertyValueFactory<Donante,String>("DIRECCION"));
+				col_SEXO.setCellValueFactory(new PropertyValueFactory<Donante,Character>("SEXO"));
+				col_CICLO.setCellValueFactory(new PropertyValueFactory<Donante,String>("CICLO"));
 				
-				
-				
+edicion=false;
+indiceedicion=0;
+
 				
 }
 	public void Guardar() throws SQLException, FileNotFoundException{
@@ -215,8 +207,18 @@ public class ControladoraDonantes {
 				DateTimeFormatter isoFecha = DateTimeFormatter.ISO_LOCAL_DATE;
 				String fcita = FECHA_NACIMIENTO.getValue().format(isoFecha);
 				
+				String mes= fcita.substring(8, 10);
+				String dia= fcita.substring(5, 7);
+				String año= fcita.substring( 0, 4);
 				
-				int res = con.ModificarDonante(NUM_DONANTE.getText(), NOMBRE.getText(), APELLIDO1.getText(), APELLIDO2.getText(), DNI.getText(), APTITUD.getText(), fcita, TELEFONO.getText(), MOVIL.getText(), GRUPO_SANGUINEO.getValue(), PAIS_NACIMIENTO.getText(), EMAIL.getText(), CP.getText(), PROVINCIA.getText(), POBLACION.getText(), DIRECCION.getText(), SEXO, CICLO.getText() );
+				String fcita2= mes+"-"+ dia + "-" + año;
+				
+				Integer num_donante2= Integer.parseInt(this.NUM_DONANTE.getText());
+				Integer telefono2 = Integer.parseInt(this.TELEFONO.getText());
+				Integer movil2 = Integer.parseInt(this.MOVIL.getText());
+				Integer cp2 = Integer.parseInt(this.CP.getText());
+				
+				int res = con.ModificarDonante(num_donante2, NOMBRE.getText(), APELLIDO1.getText(), APELLIDO2.getText(), DNI.getText(), APTITUD.getText(), fcita2, telefono2, movil2, GRUPO_SANGUINEO.getValue(), PAIS_NACIMIENTO.getText(), EMAIL.getText(), cp2, PROVINCIA.getText(), POBLACION.getText(), DIRECCION.getText(), SEXO, CICLO.getText() );
 				switch (res){
 
 					case 0:
@@ -251,9 +253,18 @@ public class ControladoraDonantes {
 				
 				DateTimeFormatter isoFecha = DateTimeFormatter.ISO_LOCAL_DATE;
 				String fcita = FECHA_NACIMIENTO.getValue().format(isoFecha);
+				String mes= fcita.substring(8, 10);
+				String dia= fcita.substring(5, 7);
+				String año= fcita.substring( 0, 4);
 				
+				String fcita2= mes+"-"+ dia + "-" + año;
 				
-				int res = con.InsertarDonante(NUM_DONANTE.getText(), NOMBRE.getText(), APELLIDO1.getText(), APELLIDO2.getText(), DNI.getText(), APTITUD.getText(), fcita, TELEFONO.getText(), MOVIL.getText(), GRUPO_SANGUINEO.getValue(), PAIS_NACIMIENTO.getText(), EMAIL.getText(), CP.getText(), PROVINCIA.getText(), POBLACION.getText(), DIRECCION.getText(), SEXO, CICLO.getText()  );
+				Integer num_donante2= Integer.parseInt(this.NUM_DONANTE.getText());
+				Integer telefono2 = Integer.parseInt(this.TELEFONO.getText());
+				Integer movil2 = Integer.parseInt(this.MOVIL.getText());
+				Integer cp2 = Integer.parseInt(this.CP.getText());
+				
+				int res = con.InsertarDonante(num_donante2, NOMBRE.getText(), APELLIDO1.getText(), APELLIDO2.getText(), DNI.getText(), APTITUD.getText(), fcita2, telefono2, movil2, GRUPO_SANGUINEO.getValue(), PAIS_NACIMIENTO.getText(), EMAIL.getText(), cp2, PROVINCIA.getText(), POBLACION.getText(), DIRECCION.getText(), SEXO, CICLO.getText()  );
 				
 			
 				switch (res){

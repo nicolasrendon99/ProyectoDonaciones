@@ -86,7 +86,7 @@ public class ConexionBBDD {
 		Statement stm = conexion.createStatement();
 
 		// Preparo la sentencia SQL CrearTablaPersonas
-		String selectsql = "SELECT * FROM "+ usr+".DONANTES";
+		String selectsql = "SELECT * FROM "+ usr +".DONANTES";
 
 		//ejecuto la sentencia
 		try{
@@ -96,19 +96,19 @@ public class ConexionBBDD {
 			while(resultado.next()){
 				contador++;
 
-				String num_donante = resultado.getString(1);
+				Integer num_donante = (int) resultado.getLong(1);
 				String nombre = resultado.getString(2);
 				String apellido1 = resultado.getString(3);
 				String apellido2 = resultado.getString(4);
 				String DNI=resultado.getString(5);
 				String aptitud=resultado.getString(6);
 				String fecha_nacimiento=resultado.getString(7);
-				String telefono=resultado.getString(8);
-				String movil=resultado.getString(9);
+				Integer telefono=(int) resultado.getLong(8);
+				Integer movil=(int) resultado.getLong(9);
 				String tipo_sanguineo =resultado.getString(10);
 				String pais_nacimiento=resultado.getString(11);
 				String email=resultado.getString(12);
-				String cp=resultado.getString(13);
+				Integer cp=(int) resultado.getLong(13);
 				String provincia=resultado.getString(14);
 				String poblacion=resultado.getString(15);
 				String direccion=resultado.getString(16);
@@ -141,9 +141,9 @@ public class ConexionBBDD {
 	 *
 	 *
 	 */
-	public int InsertarDonante(String num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
-				String fecha_nacimiento,String telefono, String movil,String tipo_sanguineo, String pais_nacimiento, String email, String cp, String provincia, String poblacion, String direccion,
-				   char SEXO, String ciclo) throws SQLException{
+	public int InsertarDonante(Integer num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
+			String fecha_nacimiento,Integer telefono, Integer movil,String tipo_sanguineo, String pais_nacimiento, String email, Integer cp, String provincia, String poblacion, String direccion,
+			   char sexo, String ciclo) throws SQLException{
 
 		// Preparo la sentencia SQL CrearTablaPersonas
 		String insertsql = "INSERT INTO " + usr+".DONANTES VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -151,23 +151,23 @@ public class ConexionBBDD {
 		//Seguridad en las Aplicaciones: SQL Injection
 
 		PreparedStatement pstmt = conexion.prepareStatement (insertsql);
-		pstmt.setString(1, num_donante);
+		pstmt.setInt(1, num_donante);
 		pstmt.setString(2, nombre);
 		pstmt.setString(3, apellido1);
 		pstmt.setString(4,apellido2);
 		pstmt.setString(5,DNI);
 		pstmt.setString(6,aptitud);
-		pstmt.setDate(6,java.sql.Date.valueOf(fecha_nacimiento));
-		pstmt.setString(8,telefono);
-		pstmt.setString(9,movil);
+		pstmt.setString(6, fecha_nacimiento);
+		pstmt.setInt(8,telefono);
+		pstmt.setInt(9,movil);
 		pstmt.setString(10,tipo_sanguineo);
 		pstmt.setString(11,pais_nacimiento);
 		pstmt.setString(12,email);
-		pstmt.setString(13,cp);
+		pstmt.setInt(13,cp);
 		pstmt.setString(14,provincia);
 		pstmt.setString(15, poblacion);
 		pstmt.setString(16, direccion);
-		pstmt.setString(17, Character.toString(SEXO));
+		pstmt.setString(17, Character.toString(sexo));
 		pstmt.setString(18,ciclo);
 		
 		
@@ -199,9 +199,9 @@ public class ConexionBBDD {
 		}
 
 		
-		public int ModificarDonante(String num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
-				String fecha_nacimiento,String telefono, String movil,String tipo_sanguineo, String pais_nacimiento, String email, String cp, String provincia, String poblacion, String direccion,
-				  char SEXO, String ciclo) throws SQLException{
+		public int ModificarDonante(Integer num_donante, String nombre, String apellido1, String apellido2, String DNI, String aptitud,
+				String fecha_nacimiento,Integer telefono, Integer movil,String tipo_sanguineo, String pais_nacimiento, String email, Integer cp, String provincia, String poblacion, String direccion,
+				   char sexo, String ciclo) throws SQLException{
 
 			// Preparo la sentencia SQL CrearTablaPersonas
 			String updatesql = "UPDATE " + usr+".DONANTES SET NOMBRE=?,APELLIDO1=?,APELLIDO2=?,DNI=?,FECHA_NACIMIENTO=?,PAIS_NACIMIENTO=?,DIRECCION=?,POBLACION=?,CODIGO_POSTAL=?,TELEFONO=?,TELEFONO2=?,CORREO_ELECTRONICO=?,SEXO=?,TIPO_SANGUINEO=?,FOTO=? WHERE NUM_DONANTE=?";
@@ -209,23 +209,23 @@ public class ConexionBBDD {
 			//Seguridad en las Aplicaciones: SQL Injection
 
 					PreparedStatement pstmt = conexion.prepareStatement (updatesql);
-					pstmt.setString(1, num_donante);
+					pstmt.setInt(1, num_donante);
 					pstmt.setString(2, nombre);
 					pstmt.setString(3, apellido1);
 					pstmt.setString(4,apellido2);
 					pstmt.setString(5,DNI);
 					pstmt.setString(6,aptitud);
 					pstmt.setString(7,fecha_nacimiento);
-					pstmt.setString(8,telefono);
-					pstmt.setString(9,movil);
+					pstmt.setInt(8,telefono);
+					pstmt.setInt(9,movil);
 					pstmt.setString(10,tipo_sanguineo);
 					pstmt.setString(11,pais_nacimiento);
 					pstmt.setString(12,email);
-					pstmt.setString(13,cp);
+					pstmt.setInt(13,cp);
 					pstmt.setString(14,provincia);
 					pstmt.setString(15,poblacion);
 					pstmt.setString(16,direccion);
-					pstmt.setString(17, Character.toString(SEXO));
+					pstmt.setString(17, Character.toString(sexo));
 					pstmt.setString(18,ciclo);
 
 					

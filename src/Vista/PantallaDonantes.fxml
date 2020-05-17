@@ -20,7 +20,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="989.0">
                <children>
-                  <Button layoutX="657.0" layoutY="18.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Menu Principal" />
+                  <Button fx:id="buttonclose" layoutX="657.0" layoutY="18.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Menu Principal" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="1.0" text=" Donante " textFill="#140101">
                      <font>
                         <Font size="18.0" />
@@ -31,7 +31,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="94.0" layoutY="36.0">
+                  <TextField fx:id="NUM_DONANTE" layoutX="94.0" layoutY="36.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -41,7 +41,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="94.0" layoutY="58.0">
+                  <TextField fx:id="NOMBRE" layoutX="94.0" layoutY="58.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -51,12 +51,12 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="94.0" layoutY="81.0">
+                  <TextField fx:id="APELLIDO1" layoutX="94.0" layoutY="81.0">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="94.0" layoutY="104.0">
+                  <TextField fx:id="APELLIDO2" layoutX="94.0" layoutY="104.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -66,12 +66,12 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="94.0" layoutY="126.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="DNI" layoutX="94.0" layoutY="126.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </TextField>
-                  <DatePicker layoutX="94.0" layoutY="152.0" prefHeight="23.0" prefWidth="113.0" />
+                  <DatePicker fx:id="FECHA_NACIMIENTO" layoutX="94.0" layoutY="152.0" prefHeight="23.0" prefWidth="113.0" />
                   <Label layoutX="4.0" layoutY="154.0" prefHeight="17.0" prefWidth="89.0" text="FECHA_NACIMIENTO">
                      <font>
                         <Font size="9.0" />
@@ -82,7 +82,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="325.0" layoutY="34.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="DIRECCION" layoutX="325.0" layoutY="34.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -102,7 +102,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="325.0" layoutY="122.0" prefHeight="25.0" prefWidth="113.0">
+                  <TextField fx:id="TELEFONO" layoutX="325.0" layoutY="122.0" prefHeight="25.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -112,7 +112,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="325.0" layoutY="151.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="MOVIL" layoutX="325.0" layoutY="151.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -132,37 +132,36 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="325.0" layoutY="181.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="EMAIL" layoutX="325.0" layoutY="181.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </TextField>
                   <Label layoutX="13.0" layoutY="236.0" text="SEXO" />
-                  <RadioButton layoutX="63.0" layoutY="236.0" mnemonicParsing="false" text="M" />
-                  <RadioButton layoutX="106.0" layoutY="236.0" mnemonicParsing="false" text="H" />
+                  <RadioButton fx:id="M" layoutX="63.0" layoutY="236.0" mnemonicParsing="false" text="M" />
+                  <RadioButton fx:id="H" layoutX="106.0" layoutY="236.0" mnemonicParsing="false" text="H" />
                   <Label layoutX="7.0" layoutY="210.0" prefHeight="17.0" prefWidth="89.0" text="TIPO_SANGUINEO">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </Label>
                   <Button fx:id="guardar" layoutX="529.0" layoutY="218.0" mnemonicParsing="false" onAction="#Guardar" prefHeight="26.0" prefWidth="66.0" text="Guardar" textFill="#020d01" />
-                  <Button layoutX="607.0" layoutY="217.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="69.0" text="Borrar" textFill="#242323" />
-                  <Button layoutX="686.0" layoutY="217.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Eliminar" textFill="#0d0101" />
-                  <Button layoutX="659.0" layoutY="53.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Seleccionar imagen" />
+                  <Button fx:id="modificar" layoutX="607.0" layoutY="217.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="69.0" text="Modificar" textFill="#242323" />
+                  <Button fx:id="eliminar" layoutX="686.0" layoutY="217.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Eliminar" textFill="#0d0101" />
                   <ImageView fitHeight="119.0" fitWidth="175.0" layoutX="474.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextField layoutX="97.0" layoutY="183.0" prefHeight="19.0" prefWidth="113.0">
+                  <TextField fx:id="PAIS_NACIMIENTO" layoutX="97.0" layoutY="183.0" prefHeight="19.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font></TextField>
-                  <TextField layoutX="325.0" layoutY="92.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="CP" layoutX="325.0" layoutY="92.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font></TextField>
-                  <TextField layoutX="325.0" layoutY="60.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="POBLACION" layoutX="325.0" layoutY="60.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font></TextField>
-                  <TextField layoutX="325.0" layoutY="207.0" prefHeight="23.0" prefWidth="113.0">
+                  <TextField fx:id="CICLO" layoutX="325.0" layoutY="207.0" prefHeight="23.0" prefWidth="113.0">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -172,7 +171,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <Button layoutX="658.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Generar carnet" />
+                  <Button fx:id="generar" layoutX="657.0" layoutY="55.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Generar carnet" />
                   <ComboBox fx:id="GRUPO_SANGUINEO" layoutX="94.0" layoutY="204.0" prefHeight="13.0" prefWidth="119.0" />
                </children>
             </AnchorPane>
